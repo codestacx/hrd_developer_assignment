@@ -11,24 +11,24 @@ The application is developed in PHP MVC framework Laravel that implements the Ya
 
 MySQL is used in this application.
 
--host      =127.0.0.1
--database  =hrd_database
--username  =root
--password  =
+-   host      =127.0.0.1
+-   database  =hrd_database
+-   username  =root
+-   password  =
 
-# How Does Application is Setup 
+## How Does Application is Setup 
 
-##Setup  Laravel Project using composer
+##  Setup  Laravel Project using composer
 
 Laravel utilizes Composer to manage its dependencies. So, before using Laravel, make sure you have Composer installed on your machine.
 
--composer global require laravel/installer
+-   composer global require laravel/installer
 
 Once the composer is successfully installed run the following command
 
--composer create-project --prefer-dist laravel/laravel contegris
+-   composer create-project --prefer-dist laravel/laravel contegris
 
-##Create MySQL based Database and a sample table called "Customers" using Laravel Migrations
+##  Create MySQL based Database and a sample table called "Customers" using Laravel Migrations
 
 As outlined in the Migrations guide to fix Key length issue for MySQL modify the boot method in AppServiceProvider.php 
 
@@ -36,7 +36,7 @@ public function boot(){
     Schema::defaultStringLength(191);
 }
 
-- Set database name  in .env file e.g DB_DATABASE=hrd_database
+-   Set database name  in .env file e.g DB_DATABASE=hrd_database
 You may set other variables as per your requirements
 
 Once everything for connection is setup go ahead and create a migration. To create table Customer run the following command
@@ -49,7 +49,7 @@ If you want to create the both model and migration for the same Table, run the f
 
 If you want to create everything linked up with the Customer model  then run the following command
 
-- php artisan make:model Customer -a
+-   php artisan make:model Customer -a
 
 Once you run the above command with -a flag, it will create CustomerController, Customer Model, Migration, Factory and Customer
 Seeder.
@@ -65,7 +65,7 @@ Schema::create('customers', function (Blueprint $table) {
      
 Now its time to migrate the table. In order to create the table, run the following command
 
-- php artisan migrate
+-   php artisan migrate
 
 ## Create a Laraval based "Seeding" script which will populate 1,000,000 plus records in the "Customers" table
 
@@ -84,12 +84,12 @@ return [
  
  Now, in order to use this factory, we have to call it from the corrosponding Seeder that is CustomerSeeder in our case.
  In the run method call it as
- - factory(\App\Customer::class,1000)->create();
+ -  factory(\App\Customer::class,1000)->create();
  
 As per the Laravel Official documentation, Every Seeder have to run from the main DatabaseSeeder.php. Now in order to run the
 CustomerSeeder, call it from the run method of DatabaseSeeder class as follow
 
-- $this->call(CustomerSeeder::class);
+-   $this->call(CustomerSeeder::class);
 
 
 
