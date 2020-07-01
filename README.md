@@ -71,8 +71,9 @@ Now its time to migrate the table. In order to create the table, run the followi
 
 In order to seed the data for the customer table follow the following steps
 
-##  1. Standard Method
+##  1. Standard Method 
 
+### I'll Seed data using two methods and on the base of their performance, I'll choose the best one.
 
 Inside database/factories We have CustomerFactory.php class that is linked with the customer Model. Just return the array of fields
 you want to use for seeding data. In our case we have the following fields
@@ -84,12 +85,20 @@ return [
  
  Now, in order to use this factory, we have to call it from the corrosponding Seeder that is CustomerSeeder in our case.
  In the run method call it as
- -  factory(\App\Customer::class,1000)->create();
+ -  factory(\App\Customer::class,1000000)->create();
  
 As per the Laravel Official documentation, Every Seeder have to run from the main DatabaseSeeder.php. Now in order to run the
 CustomerSeeder, call it from the run method of DatabaseSeeder class as follow
 
 -   $this->call(CustomerSeeder::class);
+
+## Its time to Seed the data
+
+Now everything is setup, just go ahead and run the following command
+
+-   php artisan db:seed
+
+
 
 
 
