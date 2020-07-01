@@ -98,17 +98,25 @@ Now everything is setup, just go ahead and run the following command
 
 -   php artisan db:seed
 
+### This method took 53.37 seconds to seed just 1000 records that is too much in our case as we have to seed 1 million of records Therefor I'll never use this approach
 
 
+## Second & Efficient Method 
+
+Now the second method, that I'm gonna use follow the following  approach
+
+-  Loop till the limit of records to seed and store the object for every row into array
+-  Chunk the array and for each chunk , insert the record using  Facade create method one by one
+
+### Interestingly the time take by this approach to insert 1000 records was just 0.3 seconds including the following other stats
+
+-   0.3  seconds 	1000 records
+-   2.42 seconds    1000 records
+-   11.62 seconds   10000 records
+-   130.53 seconds  1000000 records
 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[Therefor, this method is much efficient and time optimized as compared to the previous method]
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
