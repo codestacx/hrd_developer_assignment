@@ -26,7 +26,7 @@ Run Seeder to Import Customers
 
 -   `php artisan db:seed`
 
-# If you get an error about an encryption key
+###### If you get an error about an encryption key
 
 - `php artisan key:generate`
 
