@@ -4,8 +4,50 @@
 
 ## About Application 
 
-
 The application is developed in PHP MVC framework Laravel that implements the Yajra Datatables with server side rendering
+
+## Steps to run the application 
+
+Make sure the following requirements are already fulfilled before running the application
+
+-   PHP >= 7.2.5
+-   Composer installed on your machine
+-   Apache Server (XAMPP)
+
+###### Run the following commands 
+
+Install Dependencies
+-  `composer install`
+
+Run Migration
+-   `php artisan migrate`
+
+Run Seeder to Import Customers
+
+-   `php artisan db:seed`
+
+# If you get an error about an encryption key
+
+- `php artisan key:generate`
+
+Install any missing node dependencies
+
+-  `npm install`
+
+Compile fresh Scaffolding
+
+- `npm run dev`
+
+Finally run the server 
+
+-   `php artisan serve`
+
+
+
+
+
+
+## How Does Application is Setup 
 
 ## Database
 
@@ -16,7 +58,7 @@ MySQL is used in this application.
 -   username  =root
 -   password  =
 
-## How Does Application is Setup 
+
 
 ##  Setup  Laravel Project using composer
 
@@ -105,8 +147,8 @@ Now everything is setup, just go ahead and run the following command
 
 Now the second method, that I'm gonna use follow the following  approach
 
--  ** Loop till the limit of records to seed and store the object for every row into array **
--  ** Chunk the array and for each chunk , insert the record using  Facade create method one by one **
+-  Loop till the limit of records to seed and store the object for every row into array 
+-   Chunk the array and for each chunk , insert the record using  Facade create method one by one 
 
 * Instead of using faker here i used Str::random() method to generate fake strings that is much faster than the faker library *
 
@@ -152,3 +194,6 @@ Open the file config/app.php and then add following service provider
 After completing the step above, use the following command to publish configuration & assets:
 
 -   `php artisan vendor:publish --tag=datatables`
+
+
+
