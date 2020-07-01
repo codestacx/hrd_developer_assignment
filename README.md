@@ -26,10 +26,6 @@ Run Seeder to Import Customers
 
 -   `php artisan db:seed`
 
-###### If you get an error about an encryption key
-
-- `php artisan key:generate`
-
 Install Node dependencies
 
 -  `npm install`
@@ -37,6 +33,10 @@ Install Node dependencies
 Compile fresh Scaffolding
 
 - `npm run dev`
+
+If you get an error about an encryption key
+
+- `php artisan key:generate`
 
 Finally run the server 
 
