@@ -13,6 +13,7 @@ Make sure the following requirements are already fulfilled before running the ap
 -   PHP >= 7.2.5
 -   Composer installed on your machine
 -   Apache Server (XAMPP)
+-   Database mentioned in .env is already created in MySQL.
 
 ###### Run the following commands 
 
