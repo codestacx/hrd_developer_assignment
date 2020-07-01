@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','CustomerController@index')->name('index');
-Route::get('/fetch','CustomerController@fetchData')->name('customer.fetch.data');
 
-Route::get('/test','CustomerController@test')->name('test');
+Route::group(['prefix'=>'/'],function(){
+    Route::get('','CustomerController@index')->name('index');
+    Route::get('fetch','CustomerController@fetchData')->name('customer.fetch.data');
+});
+
+
