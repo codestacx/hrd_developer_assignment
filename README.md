@@ -44,7 +44,12 @@ Finally run the server
 -   `php artisan serve`
 
 
+## Endpoints
 
+### List all customers 
+``` bash
+GET http://127.0.0.1:8000/
+```
 
 
 
