@@ -30,7 +30,7 @@ Run Seeder to Import Customers
 
 - `php artisan key:generate`
 
-Install any missing node dependencies
+Install Node dependencies
 
 -  `npm install`
 
